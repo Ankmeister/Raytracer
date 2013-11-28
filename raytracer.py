@@ -3,6 +3,7 @@ from math import *
 import pygame, sys
 from pygame.locals import *
 from vector import Vector
+from Sphere import Sphere
 
 
 def main():
