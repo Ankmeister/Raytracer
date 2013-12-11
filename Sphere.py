@@ -8,9 +8,6 @@ class Sphere:
    def setPosition(self,x,y,z):
       self.position = vector.Vector(x,y,z)
 
-   def getPosition(self):
-      return self.position
-   
    def setRad(self,x,y,z):
       self.rad=vector.Vector(x,y,z)
 
