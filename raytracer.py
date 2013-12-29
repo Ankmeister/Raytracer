@@ -3,18 +3,32 @@ from math import *
 import pygame, sys
 from pygame.locals import *
 from vector import Vector
-from Sphere import Sphere
-
+from shapes import *
+from ray import *
 
 def main():
+   height = 400
+   width = 400
+
+   Sphere1 = Shape(Vector(200,200,100), 100)
+
    pygame.init()
-   background=pygame.display.set_mode((600,600))
-   #Simple drawing test atm
+   background=pygame.display.set_mode((height, width))
+   for x in range(height):
+      for y in range(width):
+
+         curray = Ray(Vector(0,0,1),Vector(x,y,0))
+         t = curray.direction * (Sphere1.position - curray.origin)
+         xclose = curray.origin + curray.direction.setScale(t)
+         print xclose
+         
+         if (abs((xclose - Sphere1.position).getMagnitude()) > Sphere1.rad):
+            continue
+         else:
+            background.set_at((x,y), 0xFFFFFF)
+   pygame.display.update()
    while True:
-      for i in range(255):
-         for j in range(255):
-            background.set_at((i,j), 0xFFFFFF)
-      pygame.display.update()
+      pass
 
 if __name__=="__main__":
    main()
