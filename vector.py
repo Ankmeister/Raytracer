@@ -9,14 +9,14 @@ class Vector:
    def getMagnitude(self):
       return (self.x**2 + self.y ** 2  + self.z ** 2)**0.5
 
-   def getMag2(self):
-      return self.x**2 + self.y ** 2  + self.z ** 2     
+   def mul(self, i):
+      return Vector(self.x*i,self.y*i,self.z*i)
 
-   def setScale(self, scale):
-      self.x *= scale
-      self.y *= scale
-      self.z *= scale
-      return self
+   def div(self, i):
+      return Vector(self.x/i,self.y/i,self.z/i)
+
+   def add(self, i):
+      return Vector(self.x+i,self.y+i,self.z+i)
 
    def norm(self):
       mag=self.getMagnitude()
@@ -39,6 +39,9 @@ class Vector:
 
    def __str__(self):
       return "x: " + str(self.x) + " y: " + str(self.y)  + " z: " + str(self.z)
+
+   def __neg__(self):
+      return Vector(-self.x, -self.y, -self.z)
 
 def crossp(v1, v2):
    cross.x = v1.y*v2.z - v1.z*v2.y
