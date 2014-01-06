@@ -20,9 +20,10 @@ class Vector:
 
    def norm(self):
       mag=self.getMagnitude()
-      self.x /= mag
-      self.y /= mag
-      self.z /= mag
+      foo=1/mag
+      self.x *= foo
+      self.y *= foo
+      self.z *= foo
       return self
    
 
