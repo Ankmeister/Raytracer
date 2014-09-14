@@ -18,12 +18,13 @@ public class Raytracer {
              //new Sphere(new Vector(500,500,170), 150, new Vector(255,0,0))};
 
         ArrayList<Sphere> allSpheres = new ArrayList<Sphere>() {{
-            add(new Sphere(new Vector(height, width/2, 100000), 80000, new Vector(120, 255, 222)));
+            add(new Sphere(new Vector(height, width/2, 100000), 80000, new Vector(255, 102, 0)));
             //add(new Sphere(new Vector(300,500,1000), 700, new Vector(120, 100, 255)));
             //add(new Sphere(new Vector(500,500,170), 150, new Vector(255,0,0)));
-            add(new Sphere(new Vector(height/2, width/2,1000), 700, new Vector(120, 100, 255)));
-            add(new Sphere(new Vector(height/2, width/2,230), 65, new Vector(120, 100, 255)));
-            add(new Sphere(new Vector(height/2, 200 + width/2,160), 40, new Vector(255,0,0)));
+            add(new Sphere(new Vector(height/2, width/2,1000), 700, new Vector(255, 0, 0)));
+            add(new Sphere(new Vector(height/2, width/2,230), 150, new Vector(0, 0, 255)));
+            add(new Sphere(new Vector(height/2, 200 + width/2,160), 50, new Vector(255,255,0)));
+            add(new Sphere(new Vector(height/2 + 300, 100 + width/2,160), 50, new Vector(0,255,0)));
             }};
 
         Light[] allLights = {new Light(new Vector(width,height, -400), new Vector(255, 255, 255))};
